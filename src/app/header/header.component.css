@@ -1,0 +1,28 @@
+.nav-link {
+    color:black;
+}
+/* .navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    justify-content: flex-end;
+} */
+
+.navbar-expand-lg .navbar-collapse1 {
+    display: flex!important;
+    flex-basis: auto;
+    justify-content: flex-start;
+}
+
+.navbar-expand-lg[_ngcontent-ng-c3088416873] .navbar-collapse[_ngcontent-ng-c3088416873] {
+    display: flex!important;
+    flex-basis: auto;
+    justify-content: flex-start;
+}
+
+.nav-link:hover{
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+
+

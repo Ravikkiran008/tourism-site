@@ -1,0 +1,18 @@
+
+<div id="country_div" ><span *ngFor="let country of countries">
+    <button (click)="onClickCountry(country.Name)" id="country_btn" class="btn btn-lg btn-outline-dark">{{ country.Name }}</button>
+</span>
+</div>
+
+
+<!-- <div id="country_div" >
+    <div *ngFor="let country of countries">
+      <button (click)="onClickCountry(country.Name)" id="country_btn" class="btn btn-lg btn-outline-dark">
+        <img src="{{ country.Image }}" alt="{{ country.Name }}" class="mr-2">
+        {{ country.Name }}
+      </button>
+      <p class="mt-2">{{ country.description }}</p>
+    </div>
+  </div> -->
+
+<br>

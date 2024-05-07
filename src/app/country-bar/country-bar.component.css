@@ -1,0 +1,23 @@
+/* button {
+    color: white;
+    font-weight: bold;
+    background-color: #0596c5;
+    margin-inline: 3%;
+    padding: 1%;
+    width: 10%;
+    border-radius: 40px;
+    border-style: ridge double;
+    border-color: #0adcdc
+} */
+
+#country_btn{
+  width: 14%;
+  margin-inline: 1%;
+  /* padding: 1%; */
+  /* border-radius: 40px; */
+}
+#country_div{
+    width: 60%;
+    margin: auto;
+   
+}

@@ -1,0 +1,165 @@
+<!-- <p>single-destination-display works!</p> -->
+
+<h1 class="text-center mt-3 mb-3">{{destination_details.Destination | titlecase }}</h1>
+<!-- <img [src]="destination_details.Destination_Image" alt=""
+  style="margin-left: 7% ;width: 60%;border-radius: 3%;height: 443px;"> -->
+
+<div class="card mb-5 ms-5" style="width: 50rem;border-radius: 5%;background-color: #EAEAEA;">
+  <img [src]="destination_details.Destination_Image" class="card-img-top" alt="..."
+    style="height: 443px;border-radius: 3% 3% 0% 0%;">
+  <div class="card-body">
+    <!-- <h5 class="card-title">Card title</h5> -->
+    <p class="card-text" style="text-align: justify;">{{destination_details.info}}</p>
+  </div>
+</div>
+
+
+<div style="margin-left:auto;width: 22%;margin-right: 6%;position: absolute; top: 27%; right: 0;" class="mr-3 clearfix">
+
+
+  <!-- <div class="card-header">Header</div> -->
+  <!-- <div class="card-body"> -->
+  <!-- <h5 class="card-title">----</h5> -->
+  <!-- <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497698.77490448696!2d77.30125374670206!3d12.954459543640922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1713421760321!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div> -->
+  <!-- <iframe width="280" height="200" style="border-radius: 3%;" [src]="getSafeUrl(destination_details.link)"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
+
+
+
+  <!-- <iframe width="560" height="315" [src]="getSafeUrl(destination_details.link)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+  <!-- <div class="card text-bg-dark mb-3" style="max-width: 18rem;;">
+        
+        <div class="card-body">
+          <h5 class="card-title">Best Time To Visit</h5>
+          <p class="card-text">{{destination_details.time_to_visit}}</p>
+        </div>
+      </div>
+    
+      <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+        
+        <div class="card-body" >
+          <h5 class="card-title">Best Stays</h5>
+          <div *ngFor="let stay of  destination_details.stays | keyvalue">
+          <p class="card-text">{{stay.key}}:{{stay.value}}</p></div>
+        </div>
+      </div> -->
+
+
+
+  <!-- <iframe width="560" height="315" [src]="getSafeUrl(destination_details.link)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture; "  allowfullscreen></iframe> -->
+  <iframe [src]="getSafeUrl(destination_details.link)" width="300" height="200" style="border:1;" allowfullscreen=""
+    loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border-radius: 5%;"></iframe>
+  <!-- </div> -->
+
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item" style="background-color: #EEEEEE;">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Best Time To Visit
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <h5>
+            <span class="badge text-bg-danger me-2">{{destination_details.time_to_visit}}</span>
+          </h5>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item" style="background-color: #EEEEEE;">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          Best Stays
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body" *ngFor="let stay of  destination_details.stays | keyvalue">
+          <h5>
+            <span class="badge text-bg-warning me-2">{{stay.key}}</span><span class="material-symbols-outlined">
+              flights_and_hotels
+            </span>
+          </h5>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item" style="background-color: #EEEEEE;">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+          <b>Calculate cost of staying</b>
+        </button>
+      </h2>
+      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body" style="margin-left: 15%;">
+          <!-- Button trigger modal -->
+          <button type="button" style="width: 80%" class="btn btn-outline-dark" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            <b>Cost Calculator</b>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><b><span class="badge text-bg-warning">Calculate Cost of
+              Staying</span></b></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-left: 10%; align-items: center;">
+          <label for="" class="col-sm-4 col-form-label">Select Stays :</label>
+          <select (change)="showprice()" [(ngModel)]="selectedstay" style="width:47%;">
+            <option *ngFor="let stay of  destination_details.stays | keyvalue" [ngValue]="stay.key">
+              {{stay.key}}
+            </option>
+          </select><br><br>
+
+          <p *ngIf="selectedstay"><label class="col-sm-4 col-form-label">Cost for 1 adult :</label><span
+              class="badge text-bg-warning">{{ price | currency:'INR'}}</span></p>
+          <p *ngIf="selectedstay"><label class="col-sm-4 col-form-label">Cost for 1 child :</label> <span
+              class="badge text-bg-warning  ">{{ price/2 | currency:'INR' }}</span></p>
+
+          <label class="col-sm-4 col-form-label">No. Of Adults :</label> <input type="number" [(ngModel)]="adults"
+            min="0"><br>
+          <label class="col-sm-4 col-form-label">No. Of Children :</label> <input type="number" [(ngModel)]="children"
+            min="0"><br>
+          <label class="col-sm-4 col-form-label">No. Of Days :</label><input type="number" [(ngModel)]="days"
+            min="0"><br><br>
+
+
+          <button class="btn btn-dark btn-sm mb-1 btn-outline" style="width: 50%; margin-left: 20%;"
+            (click)="calculateValue()">calculate</button>
+          <br>
+        </div>
+        <h4 style="text-align: center;" *ngIf="total_cost"><label class="col-sm-2 col-form-label">Total : </label> <span
+            class="badge text-bg-success">{{ total_cost | currency:'INR' }}</span></h4>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-experience [destination]="destination_details.id" (formStatus)="formStatus($event)"></app-experience>
+
+<!-- <div id="infodiv" class=" mb-3 container-fluid ps-5 pe-5">
+  <p
+    style="text-align: justify;margin-left: 4% ;width: 64%;border-radius: 3%;background-color: #EEEEEE;padding-top: 10px ;">
+    {{destination_details.info}}</p>
+</div> -->
+<!-- <router-outlet></router-outlet> -->

@@ -1,0 +1,79 @@
+<div class="card text-bg-dark" style="border-radius: 0%;">
+  <img src={{country.Image}} style="opacity: 0.6;" class="card-img" alt="..."
+    height="300px">
+  <div class="card-img-overlay">
+    <h1 class="card-title text-center" style="margin: auto;font-weight: bolder;">{{ country_name }}</h1>
+    <p>{{country.description}}</p>
+  </div>
+</div>
+
+<div class="card">
+
+  <div class="card-body text-center">
+    <blockquote class="blockquote mb-0">
+      <p style="font-weight: bolder;">Famous Destinations to Visit</p>
+      
+    </blockquote>
+  </div>
+</div>
+
+
+<!-- <div style="float: left;width: 15%;margin-left: 3%;" class="mt-3 mb-3" >
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item" style="background-color: #EEEEEE;">
+      <h2 class="accordion-header">
+        <button class="accordion-button " type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+          Category
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse show" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <button (click)="filterCategory('Architecture')" class="btn btn-outline-dark btn-sm mb-1 btn-outline" style="width: 90%;">Architecture</button><br>
+          <button (click)="filterCategory('Nature')" class="btn btn-outline-dark btn-sm mb-1 btn-outline" style="width: 90%;">Nature</button><br>
+          <button (click)="filterCategory('Historical')" class="btn btn-outline-dark btn-sm mb-1 btn-outline" style="width: 90%;">Historical</button><br>
+          
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item" style="background-color: #EEEEEE;">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+         Best Time To Visit
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <button  (click)="filterTime('Winter')" class="btn btn-outline-dark btn-sm mb-1 btn-outline" style="width: 90%;">Winter</button><br>
+          <button (click)="filterTime('Summer')" class="btn btn-outline-dark btn-sm mb-1" style="width: 90%;">Summer</button><br>
+          <button (click)="filterTime('Spring')" class="btn btn-outline-dark btn-sm mb-1" style="width: 90%;">Spring</button><br>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="width: 75%;margin-left: 20%;">
+  <div class="row text-center ">
+    <div class="col-md-4 mb-4 mt-3" *ngFor="let dest of filtered_country_destinations">
+      <a [routerLink]="['/destination',dest.id]" style="text-decoration: none; color: inherit;" >
+      <div class="card" style="width: 18rem;background-color: #EEF1FF">
+        <img src={{dest.Destination_Image}} class="card-img-top" alt="...">
+        <div class="card-body" text-center>
+          <p class="card-text"><b>{{dest.Destination}}</b></p>
+          <div class="d-flex align-items-center justify-content-center">
+            <span class="material-symbols-outlined">location_on</span>
+            <span>{{dest.Country}}</span>
+          </div>
+          
+        </div>
+      </div>
+    </a>
+    </div>
+  </div>
+</div> -->
+
+<app-display-card [country_name]="country_name"></app-display-card>
